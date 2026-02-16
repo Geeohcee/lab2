@@ -4,12 +4,12 @@ on:
   workflow_dispatch:
     inputs:
       run-job:
-        description: "Run Specific Job"
+        description: Run Specific Job
         required: false
         default: false
         type: boolean
       message:
-        description: "Message"
+        description: Message
         required: true
         type: string
 
@@ -19,5 +19,5 @@ jobs:
     steps:
       - name: Printing run-job boolean value
         if: ${{ inputs.run-job }}
-        run: echo "Run Job Value: ${{ inputs.run-job }}"
+        run: echo Run Job Value: ${{ inputs.run-job }}
 
