@@ -19,5 +19,5 @@ jobs:
     steps:
       - name: Printing run-job boolean value
         if: ${{ inputs.run-job }}
-        run: echo Run Job Value: ${{ inputs.run-job }}
+        run: echo "Run Job Value: ${{ inputs.run-job }}"
 
