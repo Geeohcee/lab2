@@ -1,14 +1,15 @@
-name: Lab Workflow
+name: Lab2 Workflow
 
 on:
   workflow_dispatch:
     inputs:
-      run_job:
-        description: 'Run Specific Job'
+      run-job:
+        description: "Run Specific Job"
         required: false
+        default: false
         type: boolean
-      custom_message:
-        description: 'Enter a custom message'
+      message:
+        description: "Message"
         required: true
         type: string
 
@@ -16,6 +17,7 @@ jobs:
   job2:
     runs-on: ubuntu-latest
     steps:
-      - name: Printing Custom Message
-        run: echo "${{ github.event.inputs.custom_message }}"
+      - name: Printing run-job boolean value
+        if: inputs.run-job == 'true' || inputs.run-job
+        run: echo "Run Job Value: ${{ inputs.run-job }}"
 
