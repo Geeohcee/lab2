@@ -13,7 +13,7 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_vpc" "main" {
+resource "aws_vpc" "main1" {
   cidr_block = "10.0.0.0/16"
 }
 
